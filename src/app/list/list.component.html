@@ -1,0 +1,7 @@
+<ul *ngFor="let obj of list_object ;let i=index" class="list-group list-group-flush todo {{(obj.Active ? 'done' :'')}}">
+    <li class="list-group-item content" (click)="checkList(i)">{{i+1}}-{{obj.name}} &nbsp;
+
+    </li>
+    <button class="btn btn-primary" (click)="editRecord(i)">Edit</button>
+    <button class="btn btn-danger" (click)="deleteItem(i)">Delete</button>
+</ul>

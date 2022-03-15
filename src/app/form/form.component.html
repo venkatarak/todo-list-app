@@ -1,0 +1,21 @@
+<br>
+<form class="form-inline"   [formGroup]="myform"  required  (ngSubmit)="sendName(myform.value)" >
+    <div class="row g-3 align-items-center" >
+        <div class="col-auto">
+            <label for="inputPassword6" class="col-form-label">Enter to do:</label>
+        </div>
+        <div class="col-auto">
+            <input type="text" formControlName="name" placeholder="todo tasks"  id="inputPassword6"  name="name" class="form-control" aria-describedby="passwordHelpInline" 
+           >
+        </div>
+      
+
+    </div>
+
+    <br>
+   
+
+
+    <button type="submit" [disabled]="!myform.valid" *ngIf="!editMode" class="btn btn-primary mb-2"  >Submit</button> &nbsp;
+    <button  *ngIf="editMode" type="button" class="btn btn-success mb-2" (click)="updateRecord()" >update</button>
+</form>
